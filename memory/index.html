@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nightfall — a memory game under the stars</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+
+<main class="app">
+  <header class="app__header">
+    <p class="header__eyebrow">A quiet little game</p>
+    <h1 class="header__title">Nightfall</h1>
+    <p class="header__tagline">Match the sky. Every pair you find joins the map.</p>
+  </header>
+
+  <div class="stats">
+    <div class="stat">
+      <span class="stat__label">Moves</span>
+      <span class="stat__value" id="moveCount">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat__label">Time</span>
+      <span class="stat__value" id="timeCount">00:00</span>
+    </div>
+    <div class="stat">
+      <span class="stat__label">Pairs</span>
+      <span class="stat__value"><span id="pairsFound">0</span>/6</span>
+    </div>
+  </div>
+
+  <svg class="constellation" id="constellationMap" viewBox="0 0 400 60" aria-hidden="true">
+    <!-- lines drawn here as pairs are matched -->
+  </svg>
+
+  <div class="board" id="board"></div>
+
+  <button class="restart-btn" id="restartBtn">Shuffle again</button>
+</main>
+
+<div class="win-overlay" id="winOverlay">
+  <div class="win-card">
+    <p class="win-card__eyebrow">Map complete</p>
+    <h2 class="win-card__title">You found every star</h2>
+    <p class="win-card__stats" id="winStats"></p>
+    <button class="win-card__btn" id="playAgainBtn">Play again</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
